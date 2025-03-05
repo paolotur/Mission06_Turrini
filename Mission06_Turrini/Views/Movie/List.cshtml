@@ -1,0 +1,37 @@
+﻿@model IEnumerable<JoelHiltonFilmCollection.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movie Collection";
+}
+
+<h2>Movie Collection</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>Lent To</th> 
+            <th>Notes</th>  
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.Category</td>
+                <td>@movie.Year</td>
+                <td>@movie.Director</td>
+                <td>@movie.Rating</td>
+                <td>@(movie.Edited ? "Yes" : "No")</td>
+                <td>@(string.IsNullOrEmpty(movie.LentTo) ? "N/A" : movie.LentTo)</td> 
+                <td>@(string.IsNullOrEmpty(movie.Notes) ? "N/A" : movie.Notes)</td>
+            </tr>
+        }
+    </tbody>
+</table>
