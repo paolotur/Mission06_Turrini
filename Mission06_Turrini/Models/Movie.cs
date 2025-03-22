@@ -1,32 +1,35 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JoelHiltonFilmCollection.Models
 {
     public class Movie
     {
-        [Key]
-        public int Id { get; set; }
+        public int MovieId { get; set; }
+
+        public int? CategoryId { get; set; }
 
         [Required]
-        public required string Category { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [Required]
-        public required string Title { get; set; }
+        public int Year { get; set; }
 
         [Required]
-        public required string Year { get; set; }
+        public string Director { get; set; } = string.Empty;
 
         [Required]
-        public required string Director { get; set; }
+        public string Rating { get; set; } = string.Empty;
 
         [Required]
-        public required string Rating { get; set; } // Dropdown: G, PG, PG-13, R
+        public bool Edited { get; set; }
 
-        public bool Edited { get; set; } = false; // Set default value
+        [Required]
+        public bool CopiedToPlex { get; set; }
 
-        public string? LentTo { get; set; } // Nullable (optional)
+        public string? LentTo { get; set; }
 
         [MaxLength(25)]
-        public string? Notes { get; set; } // Nullable (optional)
+        public string? Notes { get; set; }
     }
 }

@@ -9,12 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Load configuration properly
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                      .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true);
+                     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true);
 
 // Add services to the container
 builder.Services.AddControllersWithViews();
 
-// Register SQLite database
+// Correct database context registration (was incorrectly using AppDbContextModelSnapshot)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 

@@ -1,10 +1,10 @@
 ﻿@model JoelHiltonFilmCollection.Models.Movie
 
 @{
-    ViewData["Title"] = "Add Movie";
+    ViewData["Title"] = "Edit Movie";
 }
 
-<h2>Add a New Movie</h2>
+<h2>Edit Movie</h2>
 
 <form method="post">
     <div class="form-group">
@@ -20,13 +20,12 @@
     </div>
 
     <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" asp-for="Edited" />
+        <input type="checkbox" class="form-check-input" asp-for="Edited">
         <label class="form-check-label">Edited?</label>
-        <span asp-validation-for="Edited" class="text-danger"></span>
     </div>
 
     <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" asp-for="CopiedToPlex" />
+        <input type="checkbox" class="form-check-input" asp-for="CopiedToPlex">
         <label class="form-check-label">Copied to Plex?</label>
         <span asp-validation-for="CopiedToPlex" class="text-danger"></span>
     </div>
@@ -34,15 +33,13 @@
     <div class="form-group">
         <label>Lent To</label>
         <input type="text" class="form-control" asp-for="LentTo">
-        <span asp-validation-for="LentTo" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label>Notes</label>
         <input type="text" class="form-control" asp-for="Notes" maxlength="25">
-        <span asp-validation-for="Notes" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Add Movie</button>
+    <button type="submit" class="btn btn-primary mt-2">Edit Movie</button>
 </form>
 

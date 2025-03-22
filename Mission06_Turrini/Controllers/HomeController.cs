@@ -1,7 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Mission06_Turrini.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace JoelHiltonFilmCollection.Controllers
 {
